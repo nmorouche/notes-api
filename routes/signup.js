@@ -39,15 +39,20 @@ router.post('/', async function(req, res) {
                 password: req.body.password
             }, JWT_KEY, { expiresIn: '24h' },(err, token) => {
                 if(err) {
-                    res.send({message: 'error'});
+                    res.send({error: 'error'});
                 }
                 else {
-                    res.send(token);
+                    res.send({
+                        error: err,
+                        token
+                    });
                 }
             });
         }
     } catch (err) {
-        res.send(err);
+        res.send({
+            error: err
+        });
     }
     client.close();
 });

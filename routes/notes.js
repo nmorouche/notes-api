@@ -24,9 +24,14 @@ router.get('/', async function(req, res) {
                 //Display all datas of the collection
                 console.log('Displaying datas\n');
                 let results = await col.find({ userID: data._id}).sort({ _id: -1}).toArray();
-                res.send(results);
+                res.send({
+                    error: null,
+                    notes: results
+                });
             } catch (err) {
-                res.send(err);
+                res.send({
+                    error: err
+                });
             }
             client.close();
         }
@@ -68,7 +73,9 @@ router.put('/', async function(req, res) {
                     });
                 }
             } catch (err) {
-                res.send(err);
+                res.send({
+                    error: err
+                });
             }
             client.close();
         }
@@ -124,7 +131,9 @@ router.patch('/:id', async function(req, res) {
                     });
                 }
             } catch (err) {
-                res.send(err);
+                res.send({
+                    error: err
+                });
             }
             client.close();
         }
@@ -160,10 +169,14 @@ router.delete('/:id', async function(req, res) {
                     res.status(403).send({error: 'Accès non autorisé à cette note'})
                 } else {
                     await col.deleteOne({_id: noteToBeDeleted._id});
-                    res.send({error: null});
+                    res.send({
+                        error: null
+                    });
                 }
             } catch (err) {
-                res.send(err);
+                res.send({
+                    error: err
+                });
             }
             client.close();
         }

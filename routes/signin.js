@@ -24,9 +24,9 @@ router.get('/', async function(req, res) {
 
                 //Display all datas of the collection
                 let data = await col.find({}).toArray();
-                res.send(data);
+                res.send({data});
             } catch (err) {
-                res.send(err);
+                res.send({err});
             }
             client.close();
         }
@@ -43,9 +43,9 @@ router.delete('/', async function(req, res) {
         const col = db.collection('users');
         //Display all datas of the collection
         let data = await col.deleteMany({});
-        res.send(data);
+        res.send({data});
     } catch (err) {
-        res.send(err);
+        res.send({err});
     }
     client.close();
 });
@@ -74,10 +74,15 @@ router.post('/', async function(req, res) {
                     password: req.body.password
                 }, JWT_KEY, { expiresIn: '24h' },(err, token) => {
                     if(err) {
-                        res.send({message: 'error'});
+                        res.send({
+                            error: 'Error token'
+                        });
                     }
                     else {
-                        res.send(token);
+                        res.send({
+                            error: null,
+                            token
+                        });
                     }
                 });
             } else {
@@ -85,7 +90,7 @@ router.post('/', async function(req, res) {
             }
         }
     } catch (err) {
-        res.send(err);
+        res.send({error: err});
     }
     client.close();
 });
