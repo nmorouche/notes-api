@@ -1,6 +1,6 @@
 # notes-api NodeJS
 
-Ce projet est un projet scolaire et le but est de créer une API de gestion de notes.
+Ce projet est un projet scolaire dont le but est de créer une API de gestion de notes.
 Vous aurez donc accès ici, à une application hébergé sur Heroku afin d'effectuer les différents tests (ou bien cloner le repo et le tester en local).
 Application : https://esgi-note-api2.herokuapp.com/
 
