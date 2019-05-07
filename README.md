@@ -83,7 +83,8 @@ Assurez-vous d'avoir installé Node.JS avant de commencer.
 ```
 $ npm install
 ```
-Vous aurez besoin aussi d'une base de données MongoDB qu'il vous faudra installer ([Lien utile](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/))
+Vous aurez besoin aussi d'une base de données MongoDB qu'il vous faudra installer ([Lien utile](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/)).
+<br>
 Une fois ces deux éléments installer vous n'aurez plus qu'a lancer la commande suivant :
 ```
 $ npm start
