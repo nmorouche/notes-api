@@ -34,9 +34,11 @@ https://esgi-note-api2.herokuapp.com/signin
   $ curl -X POST --header "Content-Type: application/json" --data "{\"username\":\"YOUR_USERNAME\", \"password\":\"YOUR_PASSWORD\"}" https://esgi-note-api2.herokuapp.com/signin
   ```
   Remplacer "YOUR_USERNAME" & "YOUR_PASSWORD" par votre nom d'utilisateur ainsi que votre mot de passe.
-
+  <br>
+  <br>
+  ***Après vous être authentifié, vous recevrez un token qu'il faudra placer dans le header (x-access-token) afin d'avoir accès au differentes fonctionnalités des notes (Création, récupération, modification et suppression)***
+  <br>
 ## Création, récupération, modification et suppression de note :
-Après vous être authentifié, vous recevrez un token qu'il faudra placer dans le header (x-access-token) afin d'avoir accès au differentes fonctionnalités des notes (Création, récupération, modification et suppression)
 En effet cela sera /notes :
 
 * Créer une note :
@@ -73,7 +75,6 @@ Par la suite pour récupérer l'ensemble de vos notes il va falloit faire un GET
   Remplacer token par votre Token reçu lors du signup ou du signin & (id_note) par l'id de la note à supprimer.
   <br>
   <br>
-  
   ***Il est important à savoir que seules vos notes seront disponible pour les récupérations, modifications ou suppressions***
 
 # Installation & Déploiement
