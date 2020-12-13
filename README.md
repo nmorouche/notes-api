@@ -105,4 +105,3 @@ Pour les versions disponibles, se référer [tags on this repository](https://gi
 ## Auteurs
 
 * **Nassim MOROUCHE** - [Github](https://github.com/nmorouche)
-* **Mohamed DENNOUN** - [Github](https://github.com/Mdennoun)
